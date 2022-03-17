@@ -17,6 +17,7 @@
 		<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
 	</c:if>
 	<c:if test="${empty user_num}">
+		<a href="${pageContext.request.contextPath}/onclass/onclassList.do">온라인</a>
 		<a href="${pageContext.request.contextPath}/member/registerUser.do">회원가입</a>
 		<a href="${pageContext.request.contextPath}/member/login.do">로그인</a>
 	</c:if>
