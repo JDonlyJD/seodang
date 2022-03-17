@@ -24,5 +24,4 @@ create table ouser_detail(
 );
 
 create sequence ouser_seq;
-
-test
+test22
