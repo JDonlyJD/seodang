@@ -8,5 +8,5 @@ public class UserVO {
 	private String passwd;
 	private String phone;
 
-	
+	  
 }
