@@ -10,6 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.web.multipart.MultipartFile;
 
 public class UserVO {
@@ -32,8 +33,7 @@ public class UserVO {
 	private String address1;
 	@NotEmpty
 	private String address2;
-	@Max(100)
-	@Min(1)
+	@Range(min=1,max=100)
 	private int age;
 	@Email
 	@NotEmpty
