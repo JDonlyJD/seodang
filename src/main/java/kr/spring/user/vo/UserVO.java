@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Date;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -28,8 +30,10 @@ public class UserVO {
 	private String zipcode;
 	@NotEmpty
 	private String address1;
-	private String address2;
 	@NotEmpty
+	private String address2;
+	@Max(100)
+	@Min(1)
 	private int age;
 	@Email
 	@NotEmpty
