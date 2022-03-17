@@ -68,7 +68,7 @@
 	<bean id="sqlSessionFactory"
 	     class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="kr.spring.member.vo,
+		<property name="typeAliasesPackage" value="kr.spring.user.vo,
 		                                           kr.spring.board.vo"/>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
