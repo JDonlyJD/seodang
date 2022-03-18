@@ -1,6 +1,28 @@
 @CHARSET "UTF-8";
 
 /*====레이아웃====*/
+.container{
+    width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.13em;
+}
+.flexdisplay {
+    display: flex;
+}
+.logo{
+	padding: 8px 10px 8px 0;
+}
+.menu-item{
+  display: inline-flex;
+  /* 수직으로 가운데 정렬은 안쪽 여백을 둔다 */
+  padding: 8px 10px;
+  font-weight: bold;
+}
+.login.align-right {
+    flex: 1;
+    font-size: 0.88em;
+}
 div#main{
 	width:1024px;
 	margin:0 auto;
