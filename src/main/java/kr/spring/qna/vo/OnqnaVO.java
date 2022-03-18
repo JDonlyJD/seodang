@@ -3,13 +3,17 @@ package kr.spring.qna.vo;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class OnqnaVO {	//온라인 클래스 1:1게시판
 	private int onqua_num;
 	private int on_num;
 	private int user_num;
+	@NotEmpty
 	private String title;
+	@NotEmpty
 	private String content;
 	
 	private Date reg_date;
