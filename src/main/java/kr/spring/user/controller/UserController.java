@@ -76,34 +76,36 @@ public class UserController {
 				//비밀번호 일치 여부 체크				//사용자가 입력한 비밀번호
 				check = user.isCheckedPassword(userVO.getPasswd());
 			}
-			if(user.getAuth()==0) { //정지회원의 경우
-				throw new Exception();
-			}else if(user.getAuth()==1) {
+			if(user.getAuth()==0) { //탈퇴회원의 경우 - 아이디만 확인 후
+				throw new AuthCheckException();
+			}else if(user.getAuth()==1 && check) {//정지회원의 경우 - 비밀번호 확인 후 
 				throw new AuthBlockException();
 			}else {
 				if(check) {
 					//인증 성공, 로그인 처리
-					session.setAttribute("user_num", user.getUser_num());
-					session.setAttribute("user_name", user.getName());
-					session.setAttribute("user_auth", user.getAuth());
-					session.setAttribute("user_photo", user.getPhoto());
+					session.setAttribute("session_user_num", user.getUser_num());
+					session.setAttribute("session_user_name", user.getName());
+					session.setAttribute("session_user_auth", user.getAuth());
+					session.setAttribute("session_user_photo", user.getPhoto());
 
 					return "redirect:/main/main.do";
+				}else {
+					
 				}
 			}
 
-			throw new AuthCheckException();
-		}catch(AuthBlockException e) {
+			throw new Exception();
+		}catch(AuthCheckException e) {//로그인 오류
+			//인증 실패로 로그인 폼을 호출
+			result.reject("WithdrawlAccount");
+			//인증 실패로 로그인 폼 호출 
+			return formLogin();
+		}catch(AuthBlockException e) {//정지회원의 경우
 			result.reject("blockAccount");
 
 			return formLogin();
-		}catch(AuthCheckException e) {
-			//인증 실패로 로그인 폼을 호출
-			result.reject("invalidIdOrPassword");
-			//인증 실패로 로그인 폼 호출 
-			return formLogin();
 		}catch(Exception e) {
-			result.reject("WithdrawlAccount");
+			result.reject("invalidIdOrPassword");
 			
 			return formLogin();
 		}
@@ -122,7 +124,7 @@ public class UserController {
 	@RequestMapping("/user/myPage.do")
 	public String process(HttpSession session, Model model) {
 		
-		Integer user_num = (Integer)session.getAttribute("user_num");
+		Integer user_num = (Integer)session.getAttribute("session_user_num");
 		UserVO user = userService.selectUser(user_num);
 		
 		logger.info("<<회원 상세 정보>> : " + user);
@@ -135,7 +137,7 @@ public class UserController {
 	//수정폼
 	@GetMapping("/user/update.do")
 	public String formUpdate(HttpSession session, Model model) {
-		Integer user_num = (Integer)session.getAttribute("user_num");
+		Integer user_num = (Integer)session.getAttribute("session_user_num");
 		
 		UserVO userVO = userService.selectUser(user_num);
 		
@@ -155,7 +157,7 @@ public class UserController {
 			return "userModify";
 		}
 		
-		Integer user_num = (Integer)session.getAttribute("user_num");
+		Integer user_num = (Integer)session.getAttribute("session_user_num");
 		userVO.setUser_num(user_num);
 		
 		//회원정보수정
