@@ -18,9 +18,9 @@ public class OnclassServiceImpl implements OnclassService{
 	OnclassMapper onclassMapper;
 	
 	@Override
-	public void insertOnclass(OnclassVO onclass) {
+	public void insertOnclass(OnclassVO onclassVO) {
 		// TODO Auto-generated method stub
-		onclassMapper.insertOnclass(onclass);
+		onclassMapper.insertOnclass(onclassVO);
 	}
 
 	@Override

@@ -10,19 +10,17 @@ public class OnclassVO {
 	private int user_num;
 	private String on_name;
 	private int on_price;
-	private String on_image;
 	private String on_content;
-	private String on_filename;
-	private byte[] on_uploadfile;
+	private MultipartFile upload;
+	private byte[] uploadfile;
+	private String filename;
 	private Date reg_date;
 	private Date modify_date;
-	private MultipartFile upload;
 	
-	//MultipartFile 바이트변환 , 파일처리 및 파일명 저장 .
-	public void setOn_uploadfile(MultipartFile upload)throws IOException{
+	public void setUpload(MultipartFile upload)throws IOException{
 		this.upload = upload;
-		setOn_uploadfile(upload.getBytes());
-		setOn_filename(upload.getOriginalFilename());
+		setUploadfile(upload.getBytes());
+		setFilename(upload.getOriginalFilename());
 	}
 
 	public int getOn_num() {
@@ -57,14 +55,6 @@ public class OnclassVO {
 		this.on_price = on_price;
 	}
 
-	public String getOn_image() {
-		return on_image;
-	}
-
-	public void setOn_image(String on_image) {
-		this.on_image = on_image;
-	}
-
 	public String getOn_content() {
 		return on_content;
 	}
@@ -73,20 +63,20 @@ public class OnclassVO {
 		this.on_content = on_content;
 	}
 
-	public String getOn_filename() {
-		return on_filename;
+	public byte[] getUploadfile() {
+		return uploadfile;
 	}
 
-	public void setOn_filename(String on_filename) {
-		this.on_filename = on_filename;
+	public void setUploadfile(byte[] uploadfile) {
+		this.uploadfile = uploadfile;
 	}
 
-	public byte[] getOn_uploadfile() {
-		return on_uploadfile;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setOn_uploadfile(byte[] on_uploadfile) {
-		this.on_uploadfile = on_uploadfile;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public Date getReg_date() {
@@ -108,10 +98,7 @@ public class OnclassVO {
 	public MultipartFile getUpload() {
 		return upload;
 	}
-
-	public void setUpload(MultipartFile upload) {
-		this.upload = upload;
-	}
+	
 	
 	
 }

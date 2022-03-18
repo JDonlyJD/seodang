@@ -13,6 +13,10 @@
     	<put-attribute name="title" value="게시판 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/onclass/onclassList.jsp"/>
     </definition>
+    <definition name="onclassInsert" extends="main">
+    	<put-attribute name="title" value="게시판 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/onclass/onclassInsert.jsp"/>
+    </definition>
 </tiles-definitions>
 
 
