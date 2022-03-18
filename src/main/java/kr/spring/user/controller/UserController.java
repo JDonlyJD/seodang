@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -115,5 +116,51 @@ public class UserController {
 		session.invalidate();
 		
 		return "redirect:/main/main.do";
+	}
+	
+	//마이페이지
+	@RequestMapping("/user/myPage.do")
+	public String process(HttpSession session, Model model) {
+		
+		Integer user_num = (Integer)session.getAttribute("user_num");
+		UserVO user = userService.selectUser(user_num);
+		
+		logger.info("<<회원 상세 정보>> : " + user);
+		
+		model.addAttribute("user",user);
+		
+		return "userView";
+	}
+	
+	//수정폼
+	@GetMapping("/user/update.do")
+	public String formUpdate(HttpSession session, Model model) {
+		Integer user_num = (Integer)session.getAttribute("user_num");
+		
+		UserVO userVO = userService.selectUser(user_num);
+		
+		model.addAttribute("userVO", userVO);
+		
+		return "userModify";
+	}
+	//수정폼에서 전송된 데이터 처리
+	@PostMapping("/user/user.do")
+	public String submitUpdate(@Valid UserVO userVO,
+								BindingResult result,
+								HttpSession session) {
+		logger.info("<<회원 정보 수정>> : " + userVO);
+		
+		//유효성 체크 결과 오류가 있으면 폼 호출
+		if(result.hasErrors()) {
+			return "userModify";
+		}
+		
+		Integer user_num = (Integer)session.getAttribute("user_num");
+		userVO.setUser_num(user_num);
+		
+		//회원정보수정
+		userService.updateUser(userVO);
+		
+		return "redirect:/user/myPage.do";
 	}
 }

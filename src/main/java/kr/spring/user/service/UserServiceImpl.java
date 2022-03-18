@@ -39,13 +39,12 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserVO selectUser(Integer user_num) {
-		// TODO Auto-generated method stub
-		return null;
+		return userMapper.selectUser(user_num);
 	}
 
 	@Override
 	public void updateUser(UserVO user) {
-		// TODO Auto-generated method stub
+		userMapper.updateUser(user);
 		
 	}
 

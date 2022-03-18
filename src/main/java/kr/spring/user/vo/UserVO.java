@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.Date;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -39,6 +37,7 @@ public class UserVO {
 	@NotEmpty
 	private String email;
 	private Date reg_date;
+	private Date modify_date;
 	
 	@Pattern(regexp="^[A-Za-z0-9]{4,12}")
 	private String now_passwd;
@@ -182,6 +181,14 @@ public class UserVO {
 
 	public void setNow_passwd(String now_passwd) {
 		this.now_passwd = now_passwd;
+	}
+
+	public Date getModify_date() {
+		return modify_date;
+	}
+
+	public void setModify_date(Date modify_date) {
+		this.modify_date = modify_date;
 	}
 
 	@Override
