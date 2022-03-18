@@ -17,12 +17,14 @@
 		<a href="${pageContext.request.contextPath}/user/logout.do">로그아웃</a>
 	</c:if>
 	<c:if test="${empty user_num}">
-		<a href="${pageContext.request.contextPath}/onclass/onclassList.do">온라인</a>
 		<a href="${pageContext.request.contextPath}/user/registerUser.do">회원가입</a>
 		<a href="${pageContext.request.contextPath}/user/login.do">로그인</a>
 	</c:if>
 	<c:if test="${!empty user_num && user_auth == 2}">
 		<a href="${pageContext.request.contextPath}/user/myPage.do">MY페이지</a>
+	</c:if>
+	<c:if test="${!empty user_num && user_auth == 3}">
+		<a href="${pageContext.request.contextPath}/onclass/onclassList.do">온라인</a>
 	</c:if>
 	<a href="${pageContext.request.contextPath}/main/main.do">홈으로</a>
 </div>
