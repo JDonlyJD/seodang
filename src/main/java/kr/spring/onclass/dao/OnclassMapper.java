@@ -10,8 +10,8 @@ import org.mybatis.spring.annotation.MapperScan;
 
 import kr.spring.onclass.vo.OnclassVO;
 
-@MapperScan
 public interface OnclassMapper {
+	public List<OnclassVO> selectList(Map<String,Object> map);
 	@Insert("insert into onclass (on_num, user_num,on_name,on_price,on_content,uploadfile,filename) "
 			+ "values(onclass_seq.nextval,#{user_num},#{on_name},#{on_content},#{on_price},#{uploadfile},#{filename})")
 	public void insertOnclass(OnclassVO onclassVO);
