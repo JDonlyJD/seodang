@@ -17,7 +17,7 @@ public interface OnqnaMapper {
 	//글 목록 - rowCount
 	public int selectOnqnaRowCount(Map<String,Object> map);
 	
-	/*=============글등록==============*/
+	/*=============1.글등록==============*/
 	@Insert("INSERT INTO onqna(onqna_num, on_num, user_num, title, content, uploadfile, filename) "
 			+ "VALUES(onqna_seq.nextval,#{on_num},#{user_num},#{title},#{content},#{uploadfile},#{filename})")
 	public void insertOnqna(OnqnaVO Onqna);

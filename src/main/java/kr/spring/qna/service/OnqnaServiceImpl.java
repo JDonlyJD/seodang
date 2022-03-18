@@ -31,12 +31,12 @@ public class OnqnaServiceImpl implements OnqnaService{
 		return 0;
 	}
 
-	/*=============글등록==============*/
+	/*=============1.글등록==============*/
 	@Override
 	public void insertOnqna(OnqnaVO Onqna) {
-		// TODO Auto-generated method stub
-		
+		onqnaMapper.insertOnqna(Onqna);
 	}
+	
 	/*=============글상세==============*/
 	@Override
 	public OnqnaVO selectOnqna(Integer Onqna_num) {
