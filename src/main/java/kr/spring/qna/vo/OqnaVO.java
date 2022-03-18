@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class QqnaVO {
+public class OqnaVO {	//전체 게시판
 	private int qna_num;
 	private int user_num;
 	private String title;

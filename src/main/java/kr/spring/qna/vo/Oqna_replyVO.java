@@ -2,7 +2,7 @@ package kr.spring.qna.vo;
 
 import kr.spring.util.DurationFromNow;
 
-public class Qna_replyVO {
+public class Oqna_replyVO {		//전체게시판 댓글
 
 	private int qnare_num;
 	private int qna_num;

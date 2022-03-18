@@ -11,6 +11,7 @@ public class OnqnaVO {	//온라인 클래스 1:1게시판
 	private int user_num;
 	private String title;
 	private String content;
+	
 	private Date reg_date;
 	private Date modify_date;
 	
