@@ -144,7 +144,7 @@ public class UserController {
 		return "userModify";
 	}
 	//수정폼에서 전송된 데이터 처리
-	@PostMapping("/user/user.do")
+	@PostMapping("/user/update.do")
 	public String submitUpdate(@Valid UserVO userVO,
 								BindingResult result,
 								HttpSession session) {

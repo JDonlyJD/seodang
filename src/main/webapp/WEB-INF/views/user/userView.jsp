@@ -122,7 +122,7 @@
 		<li>나이 : ${user.age}</li>
 		<li>가입날짜 : ${user.reg_date}</li>
 		<c:if test="${!empty user.modify_date}">
-		<li>정보 수정일 : ${uesr.modify_date}</li>
+		<li>정보 수정일 : ${user.modify_date}</li>
 		</c:if>
 	</ul>
 	<hr size="1" width="100%">

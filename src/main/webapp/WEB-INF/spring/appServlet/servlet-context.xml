@@ -58,6 +58,7 @@
 	 	<beans:property name="defaultEncoding" value="UTF-8"/>
 	 </beans:bean>
 	
+	
 	<!-- messagSource 지정 -->
 	<beans:bean id="messageSource"
 	   class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -67,6 +68,16 @@
 			</beans:list>
 		</beans:property>	
 	</beans:bean>
+	
+	<!-- 로그인 여부 체크 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/myPage.do"/>
+			<mapping path="/user/update.do"/>
+			<beans:bean class="kr.spring.interceptor.LoginCheckInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 	
 	<!-- BLOB타입 이미지 표시 -->
 	<beans:bean id="imageView" class="kr.spring.view.ImageView"/>
