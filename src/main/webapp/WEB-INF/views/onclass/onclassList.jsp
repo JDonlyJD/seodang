@@ -8,6 +8,8 @@
 p { margin:20px 0px;}
 </style>
 
+<a href="${pageContext.request.contextPath}/onclass/onclassInsert.do">수업 등록</a>
+
  <div class="container">
       <div class="row">
         <div class="col-4">
