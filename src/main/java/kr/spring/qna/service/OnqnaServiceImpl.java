@@ -45,7 +45,7 @@ public class OnqnaServiceImpl implements OnqnaService{
 	}
 	/*=============조회수==============*/
 	@Override
-	public void updateOnQnaHit(Integer Onqna_num) {
+	public void updateOnqnaHit(Integer Onqna_num) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -26,7 +26,7 @@ public interface OnqnaMapper {
 	public OnqnaVO selectOnqna(Integer Onqna_num);
 	
 	/*=============조회수==============*/
-	public void updateOnQnaHit(Integer Onqna_num);
+	public void updateOnqnaHit(Integer Onqna_num);
 	
 	/*=============글수정(OnqnaMapper.xml에 명시)==============*/
 	public void updateOnqna(OnqnaVO Onqna);
