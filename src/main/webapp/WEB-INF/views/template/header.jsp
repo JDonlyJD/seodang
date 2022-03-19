@@ -8,7 +8,7 @@
 			<a href="${pageContext.request.contextPath }/main/main.do" class="align-left;"><b>서당개3년</b></a>
 		</div>
 		<div class="menu clearfix">
-			<a href="#" class="menu-item"><b>온라인</b></a>
+			<a href="${pageContext.request.contextPath}/onclass/onclassList.do" class="menu-item"><b>온라인</b></a>
 			<a href="#" class="menu-item"><b>오프라인</b></a>
 			<a href="#" class="menu-item"><b>키트</b></a>
 		</div>
@@ -31,9 +31,6 @@
 			</c:if>
 			<c:if test="${!empty session_user_num && session_user_auth == 2}">
 				<a href="${pageContext.request.contextPath}/user/myPage.do">MY페이지</a>
-			</c:if>
-			<c:if test="${!empty session_user_num && session_user_auth == 3}">
-				<a href="${pageContext.request.contextPath}/onclass/onclassList.do">온라인</a>
 			</c:if>
 			<a href="${pageContext.request.contextPath}/main/main.do">홈으로</a>
 		</div>

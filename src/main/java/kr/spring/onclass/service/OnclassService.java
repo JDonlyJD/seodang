@@ -6,10 +6,12 @@ import java.util.Map;
 import kr.spring.onclass.vo.OnclassVO;
 
 public interface OnclassService {
-	public void insertOnclass(OnclassVO onclass);
+	public int selectRowCount(Map<String,Object> map);
+	public void insertOnclass(OnclassVO onclassVO);
 	public int getOnclassCount();
-	public List<OnclassVO> getOnclassList(Map<String,Object> map);
+	public List<OnclassVO> selectList(Map<String,Object> map);
 	public OnclassVO getOnclass(int num);
-	public void updateOnclass(OnclassVO onclass);
+	public void updateOnclass(OnclassVO onclassVO);
 	public void deleteOnclass(int num);
+	public OnclassVO selectOnclass(Integer on_num);
 }

@@ -10,12 +10,16 @@
     	<put-attribute name="body" value="/WEB-INF/views/board/boardList.jsp"/>
     </definition>
     <definition name="onclassList" extends="main">
-    	<put-attribute name="title" value="게시판 목록"/>
+    	<put-attribute name="title" value="수업 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/onclass/onclassList.jsp"/>
     </definition>
     <definition name="onclassInsert" extends="main">
-    	<put-attribute name="title" value="게시판 목록"/>
+    	<put-attribute name="title" value="수업 등록"/>
     	<put-attribute name="body" value="/WEB-INF/views/onclass/onclassInsert.jsp"/>
+    </definition>
+    <definition name="onclassModify" extends="main">
+    	<put-attribute name="title" value="수업 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/onclass/onclassModify.jsp"/>
     </definition>
 </tiles-definitions>
 

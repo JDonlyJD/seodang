@@ -30,27 +30,39 @@ public class OnclassServiceImpl implements OnclassService{
 	}
 
 	@Override
-	public List<OnclassVO> getOnclassList(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return onclassMapper.getOnclassList(map);
-	}
-
-	@Override
 	public OnclassVO getOnclass(int num) {
 		// TODO Auto-generated method stub
 		return onclassMapper.getOnclass(num);
 	}
 
 	@Override
-	public void updateOnclass(OnclassVO onclass) {
+	public void updateOnclass(OnclassVO onclassVO) {
 		// TODO Auto-generated method stub
-		onclassMapper.updateOnclass(onclass);
+		onclassMapper.updateOnclass(onclassVO);
 	}
 
 	@Override
 	public void deleteOnclass(int num) {
 		// TODO Auto-generated method stub
 		onclassMapper.deleteOnclass(num);
+	}
+
+	@Override
+	public int selectRowCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return onclassMapper.selectRowCount(map);
+	}
+
+	@Override
+	public List<OnclassVO> selectList(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return onclassMapper.selectList(map);
+	}
+
+	@Override
+	public OnclassVO selectOnclass(Integer on_num) {
+		// TODO Auto-generated method stub
+		return onclassMapper.selectOnclass(on_num);
 	}
 
 }
