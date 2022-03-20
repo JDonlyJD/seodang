@@ -23,6 +23,7 @@ public interface UserMapper {
 			+ "address1=#{address1},address2=#{address2},email=#{email},age=#{age},modify_date=SYSDATE "
 			+ "WHERE user_num=#{user_num}")
 	public void updateUser(UserVO user);
+	@Update("UPDATE ouser_detail SET passwd=#{passwd} WHERE user_num=#{user_num}")
 	public void updatePassword(UserVO user);
 	public void deleteUser(Integer user_num);
 	public void deleteUser_detail(Integer user_num);

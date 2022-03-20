@@ -165,4 +165,41 @@ public class UserController {
 		
 		return "redirect:/user/myPage.do";
 	}
+	
+	//비밀번호 변경 폼
+	@GetMapping("/user/changePassword.do")
+	public String formChangePassword() {
+		return "userChangePassword";
+	}
+	
+	//비밀번호 변경 폼에서 전송된 데이터 처리
+	@PostMapping("/user/changePassword.do")
+	public String submitChangePassword(@Valid UserVO userVO, 
+			BindingResult result,HttpSession session) {
+		
+		logger.info("<<비밀번호 변경 처리>> : " + userVO);
+		
+		//유효성 체크 결과 오류가 있으면 폼 호출
+		if(result.hasFieldErrors("now_passwd") || 
+								result.hasFieldErrors("passwd")) {
+			return formChangePassword();
+		}
+		
+		Integer user_num = (Integer)session.getAttribute("session_user_num");
+		userVO.setUser_num(user_num);
+		
+		//세션에 저장된 회원번호를 이용해서 DB에 저장된 회원번호를 UserVO에 담아서 반환
+		UserVO db_user =
+				userService.selectUser(userVO.getUser_num());
+			//DB에서 읽어온 비밀번호			//사용자가 입력한 비밀번호
+		if(!db_user.getPasswd().equals(userVO.getNow_passwd())) {
+			result.rejectValue("now_passwd", "invalidPassword");
+			return formChangePassword();
+		}
+		
+		//비밀번호 수정
+		userService.updatePassword(userVO);
+	
+	return "redirect:/user/myPage.do";
+	}
 }
