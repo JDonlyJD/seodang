@@ -21,6 +21,10 @@
     	<put-attribute name="title" value="회원정보수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/user/userModify.jsp"/>
     </definition>
+    <definition name="userChangePassword" extends="main">
+    	<put-attribute name="title" value="회원정보수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/user/userChangePassword.jsp"/>
+    </definition>
 </tiles-definitions>
 
 

@@ -5,11 +5,11 @@
 <div class="container">
 	<div class="flexdisplay">
 		<div class="logo">
-			<a href="${pageContext.request.contextPath }/main/main.do" class="align-left;"><b>서당개3년</b></a>
+			<a href="${pageContext.request.contextPath }/main/main.do" class="align-left"><b>서당개3년</b></a>
 		</div>
 		<div class="menu clearfix">
 			<a href="${pageContext.request.contextPath}/onclass/onclassList.do" class="menu-item"><b>온라인</b></a>
-			<a href="#" class="menu-item"><b>오프라인</b></a>
+			<a href="${pageContext.request.contextPath}/offclass/offclassList.do" class="menu-item"><b>오프라인</b></a>
 			<a href="#" class="menu-item"><b>키트</b></a>
 		</div>
 		<div class="login align-right">

@@ -74,6 +74,7 @@
 		<interceptor>
 			<mapping path="/user/myPage.do"/>
 			<mapping path="/user/update.do"/>
+			<mapping path="/user/changePassword.do"/>
 			<beans:bean class="kr.spring.interceptor.LoginCheckInterceptor"/>
 		</interceptor>
 	</interceptors>
