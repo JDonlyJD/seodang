@@ -42,9 +42,9 @@ public class OnclassServiceImpl implements OnclassService{
 	}
 
 	@Override
-	public void deleteOnclass(int num) {
+	public void deleteOnclass(int on_num) {
 		// TODO Auto-generated method stub
-		onclassMapper.deleteOnclass(num);
+		onclassMapper.deleteOnclass(on_num);
 	}
 
 	@Override

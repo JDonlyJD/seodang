@@ -12,6 +12,6 @@ public interface OnclassService {
 	public List<OnclassVO> selectList(Map<String,Object> map);
 	public OnclassVO getOnclass(int num);
 	public void updateOnclass(OnclassVO onclassVO);
-	public void deleteOnclass(int num);
+	public void deleteOnclass(int on_num);
 	public OnclassVO selectOnclass(Integer on_num);
 }

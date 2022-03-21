@@ -24,5 +24,5 @@ public interface OnclassMapper {
 	public OnclassVO getOnclass(int num);
 	public void updateOnclass(OnclassVO onclassVO);
 	@Delete("delete from onclass where on_num = #{num}")
-	public void deleteOnclass(int num);
+	public void deleteOnclass(int on_num);
 }
