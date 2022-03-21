@@ -3,7 +3,10 @@ package kr.spring.onclass.vo;
 import java.io.IOException;
 import java.sql.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
+
+import kr.spring.user.vo.UserVO;
 
 public class OnclassVO {
 	private int on_num;
@@ -17,11 +20,24 @@ public class OnclassVO {
 	private Date reg_date;
 	private Date modify_date;
 	
+	private String deletePasswd;
+	
+	public String getDeletePasswd() {
+		return deletePasswd;
+	}
+
+	public void setDeletPasswd(String deletePasswd) {
+		this.deletePasswd = deletePasswd;
+	}
+	
+	
+
 	public void setUpload(MultipartFile upload)throws IOException{
 		this.upload = upload;
 		setUploadfile(upload.getBytes());
 		setFilename(upload.getOriginalFilename());
 	}
+
 
 	public int getOn_num() {
 		return on_num;
@@ -98,7 +114,6 @@ public class OnclassVO {
 	public MultipartFile getUpload() {
 		return upload;
 	}
-	
 	
 	
 }

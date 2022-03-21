@@ -21,7 +21,6 @@ public class ImageView extends AbstractView {
 		
 		byte[] file = (byte[]) model.get("imageFile");
 		String filename = (String) model.get("filename");
-		
 		String ext = filename.substring(
 				           filename.lastIndexOf("."));
 		if(ext.equalsIgnoreCase(".gif")) {

@@ -16,7 +16,9 @@
 		               ]]>
 		               b.reg_date,
 		               m.id ,
-		               b.on_content
+		               b.on_content,
+		               m.user_num,
+		               b.filename
 		            FROM onclass b
 		            JOIN ouser m 
 		            ON b.user_num = m.user_num

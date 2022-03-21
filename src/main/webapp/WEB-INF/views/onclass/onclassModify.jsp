@@ -63,8 +63,6 @@
 		</ul>	 
 		<div class="align-center">
 			<form:button>전송</form:button>
-			<input type="button" value="삭제" 
-			              onclick="location.href='onclassDelete.do'">
 		</div>                                          
 	</form:form>
 </div>

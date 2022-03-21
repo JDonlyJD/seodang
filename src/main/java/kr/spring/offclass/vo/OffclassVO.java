@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class OffClassVO {
+public class OffclassVO {
 	private int off_num;//클래스 번호
 	private int category_num;
 	private String off_name;//클래스 이름

@@ -78,9 +78,10 @@ public class UserController {
 			}
 			if(user.getAuth()==0) { //탈퇴회원의 경우 - 아이디만 확인 후
 				throw new AuthCheckException();
-			}else if(user.getAuth()==1 && check) {//정지회원의 경우 - 비밀번호 확인 후 
-				throw new AuthBlockException();
 			}else {
+				if(user.getAuth()==1 && check) {//정지회원의 경우 - 아이디, 비번 확인 후
+					throw new AuthBlockException();
+				}
 				if(check) {
 					//인증 성공, 로그인 처리
 					session.setAttribute("session_user_num", user.getUser_num());
@@ -89,8 +90,6 @@ public class UserController {
 					session.setAttribute("session_user_photo", user.getPhoto());
 
 					return "redirect:/main/main.do";
-				}else {
-					
 				}
 			}
 
